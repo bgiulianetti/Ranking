@@ -258,13 +258,16 @@ namespace SUA.Repositorios
             if (votaciones != null && votaciones.Count >= 3)
                 throw new Exception(VOTACION_CANT_MAX_EXCEPTION);
 
+/*
             var votacionObtenida = GetVotacionesByEmailAndShow(votacion.Email, votacion.Show);
             if (votacionObtenida != null)
                 throw new Exception(VOTACION_CANT_MAX_EXCEPTION);
-
+*/
+/*
             var votacionObtenidaTel = GetVotacionesByTelAndShow(votacion.Telefono, votacion.Show);
             if (votacionObtenidaTel != null)
                 throw new Exception(VOTACION_CANT_MAX_EXCEPTION);
+*/
 
             var response = Client.IndexAsync(votacion, i => i
               .Index(Index)
