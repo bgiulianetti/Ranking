@@ -546,7 +546,6 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Votar\Votar.cshtml" />
     <Content Include="Views\Votar\Ranking.cshtml" />
-    <Content Include="Views\Votar\Votaciones.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

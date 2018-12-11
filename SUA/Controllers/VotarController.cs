@@ -123,6 +123,8 @@ namespace SUA.Controllers
                 if (votacion.Descuentos == null)
                     votacion.Descuentos = "off";
 
+                votacion.Ip = Request.UserHostAddress;
+
                 service.AddVotacion(votacion);
                 return RedirectToAction("Ranking", new { show = fileNameShow });
             }

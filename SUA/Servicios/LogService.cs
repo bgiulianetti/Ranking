@@ -42,7 +42,7 @@ namespace SUA.Servicios
                 Fecha = DateTime.Now,
                 Informacion = informacion,
                 Pantalla = pantalla,
-                Username = HttpContext.Current.Request.Cookies.Get("session").Value
+                Username = ""
             };
             AddLog(log);
         }
