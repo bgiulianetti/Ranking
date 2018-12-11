@@ -1,0 +1,139 @@
+﻿<div id="container" class="main-content" style="padding:50px;  width: 100%;">
+
+    @if (ViewBag.mensaje == "listar")
+    {
+        <table style="border-spacing: 20px">
+            <tr>
+                <td>
+                    <div id="entries" style="width:200px"></div>
+                </td>
+                <td>
+                    <div id="botones" style="width:200px; padding-top:5px"></div>
+                </td>
+                <td>
+                    <div id="busqueda" style="width:200px"></div>
+                </td>
+            </tr>
+        </table>
+        <hr style="color: #8dd9f7">
+
+        <div style="width: 100%; overflow-x: auto;  white-space: nowrap;">
+
+            <table id="table_votaciones" class="display compact hover nowrap">
+                <thead>
+                    <tr>
+                        <th>Fecha</th>
+                        <th>Show</th>
+                        <th>Ciudad</th>
+                        <th>Provincia</th>
+                        <th>Pais</th>
+                        <th>Nombre</th>
+                        <th>Telefono</th>
+                        <th>Email</th>
+                        <th>Notificaciones</th>
+                        <th>Descuentos</th>
+                    </tr>
+                </thead>
+                <tfoot>
+                    <tr>
+                        <th>Fecha</th>
+                        <th>Show</th>
+                        <th>Ciudad</th>
+                        <th>Provincia</th>
+                        <th>Pais</th>
+                        <th>Nombre</th>
+                        <th>Telefono</th>
+                        <th>Email</th>
+                        <th>Notificaciones</th>
+                        <th>Descuentos</th>
+                    </tr>
+                </tfoot>
+                <tbody>
+                    @foreach (var item in ViewBag.votaciones)
+                    {
+                        <tr>
+                            <td>@item.Fecha.ToString("yyyy-MM-dd")</td>
+                            <td>@item.Show</td>
+                            <td>@item.Ciudad.Nombre</td>
+                            <td>@item.Ciudad.Estado</td>
+                            <td>@item.Ciudad.Pais</td>
+                            <td>@item.Nombre</td>
+                            <td>@item.Telefono</td>
+                            <td>@item.Email</td>
+                            <td>@item.Notificaciones</td>
+                            <td>@item.Descuentos</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+        </div>
+
+        <hr style="color: #8dd9f7">
+        <table style="border-spacing: 20px">
+            <tr>
+                <td>
+                    <div id="info" style="width:200px"></div>
+                </td>
+                <td>
+                    <div id="paginado" style="width:200px"></div>
+                </td>
+            </tr>
+        </table>
+    }
+    else
+    {
+        <label>@ViewBag.mensaje</label>
+    }
+
+</div>
+
+<script>
+
+    $(document).ready(function () {
+
+        var tableStanduperos = $('#table_votaciones').DataTable({
+            responsive: true,
+            dom: 'l<B>ftip',
+            buttons: [
+                { extend: 'excelHtml5', title: "Votaciones", messageTop: 'Fecha: ' + new Date().toJSON().slice(0, 10).replace(/-/g, '/') },
+                'csvHtml5',
+                { extend: 'pdf', title: "Listado de Votaciones", messageTop: 'Fecha: ' + new Date().toJSON().slice(0, 10).replace(/-/g, '/') }
+            ],
+            'columnDefs': [{ "targets": 0, "className": "text-center" }]
+        });
+
+        var contador = 0;
+        $('#table_votaciones tfoot th').each(function () {
+            if (contador != 0) {
+                var title = $(this).text();
+                $(this).html('<input type="text" placeholder="' + title + '" />');
+            }
+            contador++;
+        });
+
+
+        // Apply the search
+        var table = $('#table_votaciones').DataTable();
+        table.columns().every(function () {
+            var that = this;
+            $('input', this.footer()).on('keyup change', function () {
+                if (that.search() !== this.value)
+                    that.search(this.value).draw();
+            });
+        });
+        $('#table_votaciones_filter').hide();
+
+
+        $("#entries").append($(".dt-buttons"));
+        $("#botones").append($(".dataTables_length"));
+
+        $("#info").append($("#table_votaciones_info"));
+        $("#table_standuperos_paginate").hide();
+
+    });
+
+
+
+</script>
+

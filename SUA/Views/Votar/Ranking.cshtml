@@ -1,0 +1,108 @@
+﻿
+@{
+    Layout = null;
+    var ranking = 0;
+}
+<html>
+<head>
+    <title>@ViewBag.show</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="~/assets/votacion/assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="~/assets/votacion/assets/css/noscript.css" /></noscript>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+        $(function () {
+            var ciudades = @Html.Raw(Json.Encode(@ViewBag.ciudades));
+              $("#ciudad").autocomplete({
+                  source: ciudades
+              });
+          });
+    </script>
+</head>
+<body class="is-preload">
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+        <section id="main">
+            <header>
+                <span class="avatar"><img src="~/assets/votacion/images/@ViewBag.image" .jpg alt="" /></span>
+                
+                @if (@ViewBag.show == "#LOSOTROS Magalí Tajes")
+                {
+                    <h1 style="color:@ViewBag.color; font-weight:bold">#LOSOTROS <br />Magalí Tajes</h1>
+                }
+                else
+                {
+                    <h1 style="color:@ViewBag.color; font-weight:bold">@ViewBag.show</h1>
+                }
+                
+                <h2>Ranking de Ciudades</h2>
+                @if (ViewBag.mensaje != "")
+                {
+                    <p style="color:deeppink">@ViewBag.mensaje</p>
+                }
+            </header>
+            @if (ViewBag.mensaje != "Esta url no existe :(")
+            {
+                <table style="width:100%">
+                    <thead>
+                        <tr>
+                            <th style="font-weight:900">#</th>
+                            <th style="font-weight:900">Voto</th>
+                            <th style="font-weight:900">Ciudad</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in ViewBag.ranking)
+                        {
+                            ranking = ranking + 1;
+                            <tr>
+                                <td style="text-align:center">@ranking</td>
+                                <td style="text-align:center">@item.VotesCount.ToString("N1")%</td>
+                                @if (item.Ciudad.Pais != "Argentina")
+                                {
+                                    <td style="text-align:center; letter-spacing: 0em !important">@item.Ciudad.Nombre - @item.Ciudad.Pais</td>
+                                }
+                                else
+                                {
+                                    <td style="text-align:center; letter-spacing: 0em !important">@item.Ciudad.Nombre - @item.Ciudad.Estado</td>
+                                }
+
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            }
+                <br />
+                <br />
+                <footer>
+                    <ul class="icons">
+                        <li><a href="https://twitter.com/StandupAR" class="fa-twitter">Twitter</a></li>
+                        <li><a href="https://www.instagram.com/standupargentina/" class="fa-instagram">Instagram</a></li>
+                        <li><a href="https://www.facebook.com/standuparg/" class="fa-facebook">Facebook</a></li>
+                    </ul>
+                </footer>
+            </section>
+
+            <footer id="footer">
+                <ul class="copyright">
+                    <li>&copy; Stand Up Argentina</li>
+                </ul>
+            </footer>
+
+        </div>
+
+        <!-- Scripts -->
+        <script>
+            if ('addEventListener' in window) {
+                window.addEventListener('load', function () { document.body.className = document.body.className.replace(/\bis-preload\b/, ''); });
+                document.body.className += (navigator.userAgent.match(/(MSIE|rv:11\.0)/) ? ' is-ie' : '');
+            }
+        </script>
+
+    </body>
+</html>

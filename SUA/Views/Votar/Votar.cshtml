@@ -1,0 +1,123 @@
+﻿
+@{
+    Layout = null;
+}
+
+<html>
+<head>
+    <title>@ViewBag.show</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="~/assets/votacion/assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="~/assets/votacion/assets/css/noscript.css" /></noscript>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+        $(function () {
+            var ciudades = @Html.Raw(Json.Encode(@ViewBag.ciudades));
+              $("#ciudad").autocomplete({
+                  source: ciudades
+              });
+          });
+    </script>
+</head>
+<body class="is-preload">
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+
+
+        <section id="main">
+            <header>
+                <span class="avatar"><img src="~/assets/votacion/images/@ViewBag.image" .jpg alt="" /></span>
+
+                @if (@ViewBag.show == "#LOSOTROS Magalí Tajes")
+                {
+                    <h1 style="color:@ViewBag.color; font-weight:bold">#LOSOTROS <br />Magalí Tajes</h1>
+                }
+                else
+                {
+                    <h1 style="color:@ViewBag.color; font-weight:bold">@ViewBag.show</h1>
+                }
+                
+                <p>¡Votá tu ciudad!</p>
+                @if (ViewBag.mensaje != "")
+                {
+                    <p style="color:deeppink">@ViewBag.mensaje</p>
+                }
+            </header>
+            @using (Html.BeginForm("Votar", "Votar", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+                if (ViewBag.mensaje != "Esta url no existe :(")
+                {
+                    <div class="fields">
+                        <div class="field">
+                            <input name="ciudad" id="ciudad" type="text" placeholder="ciudad" required />
+                        </div>
+                        <div class="field">
+                            <input type="text" name="Nombre" id="name" placeholder="nombre" />
+                        </div>
+                        <div class="field">
+                            <input type="tel" name="Telefono" id="tel" placeholder="tel" style="height:2.75em" required />
+                        </div>
+                        <div class="field">
+                            <input type="email" name="Email" id="email" placeholder="email" required />
+                        </div>
+
+                        <div class="field" style="text-align:left; letter-spacing:2px">
+                            <br />
+                            <input type="checkbox" id="human" name="Notificaciones" /><label for="human">Quiero que me avisen cuando vengan a mi ciudad</label>
+                        </div>
+
+                        <div class="field" style="text-align:left; letter-spacing:2px">
+                            <input type="checkbox" id="descuentos" name="Descuentos" /><label for="descuentos">Quiero recibir descuentos para este u otros shows en mi ciudad</label>
+                        </div>
+
+                    </div>
+                    <ul class="actions special">
+                        <li><input type="submit" class="button" style="background-color:@ViewBag.color; color:#ffffff; width:100%" value="VOTAR" /></li>
+                    </ul>
+                    <input name="Show" value="@ViewBag.show" style="visibility:hidden; position:absolute" />
+                    <input type="text" name="Ip" id="Ip" style="visibility:hidden; position:absolute" />
+                    <input type="text" value="@ViewBag.fileNameShow" name="fileNameShow" id="fileNameShow" style="visibility:hidden; position:absolute" />
+                }
+            }
+            <footer>
+                <ul class="icons">
+                    <li><a href="https://twitter.com/StandupAR" class="fa-twitter">Twitter</a></li>
+                    <li><a href="https://www.instagram.com/standupargentina/" class="fa-instagram">Instagram</a></li>
+                    <li><a href="https://www.facebook.com/standuparg/" class="fa-facebook">Facebook</a></li>
+                </ul>
+            </footer>
+        </section>
+
+        <footer id="footer">
+            <ul class="copyright">
+                <li>&copy; Stand Up Argentina</li>
+            </ul>
+        </footer>
+
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        if ('addEventListener' in window) {
+            window.addEventListener('load', function () { document.body.className = document.body.className.replace(/\bis-preload\b/, ''); });
+            document.body.className += (navigator.userAgent.match(/(MSIE|rv:11\.0)/) ? ' is-ie' : '');
+        }
+    </script>
+
+</body>
+</html>
+<script>
+
+        $(document).ready(function () {
+            $.get("https://api.ipify.org?format=json", function (data) {
+                $("#Ip").val(data.ip);
+            });
+        });
+
+</script>
