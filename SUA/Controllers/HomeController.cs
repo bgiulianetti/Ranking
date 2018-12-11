@@ -15,7 +15,7 @@ namespace SUA.Controllers
         [HttpGet]
         public ActionResult Index()
         {
-            ViewBag.titulo = "Inicio";
+            ViewBag.titulo = "Votación";
             return View();
         }   
     }
