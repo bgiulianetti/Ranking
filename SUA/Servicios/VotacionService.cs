@@ -1,9 +1,10 @@
 ﻿using SUA.Models;
 using SUA.Repositorios;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Web;
+using System.Collections.Generic;
+using System.Web.Caching;
+using System.Linq;
 
 namespace SUA.Servicios
 {
@@ -45,7 +46,32 @@ namespace SUA.Servicios
 
         public void AddVotacion(Votacion votacion)
         {
-            Repository.AddVotacion(votacion);
+            var votaciones = (List<Votacion>)HttpContext.Current.Cache["ips"];
+            if(votaciones == null)
+            {
+                votaciones = new List<Votacion>();
+                HttpContext.Current.Cache["ips"] = votaciones;
+            }
+            if(votaciones.FindAll(f => f.Ip == votacion.Ip).Count < 3)
+            {
+                if (votaciones.FindAll(f => f.Email == votacion.Email).Count == 0)
+                {
+                    Repository.AddVotacion(votacion);
+                    votaciones.Add(votacion);
+                    HttpContext.Current.Cache["ips"] = votaciones;
+                }
+                else
+                {
+                    throw new Exception("voto_ya_registrado_error");
+                }
+            }
+            else
+            {
+                throw new Exception("voto_ya_registrado_error");
+            }
+                
+
+          
         }
 
         public void AddBulkVotacion(List<Votacion> votaciones)
