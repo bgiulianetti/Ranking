@@ -52,7 +52,7 @@ namespace SUA.Servicios
                 votaciones = new List<Votacion>();
                 HttpContext.Current.Cache["ips"] = votaciones;
             }
-            if(votaciones.FindAll(f => f.Ip == votacion.Ip).Count < 3)
+            if(votaciones.FindAll(f => f.Ip == votacion.Ip).FindAll(f=>f.Show == votacion.Show).Count < 3)
             {
                 if (votaciones.FindAll(f => f.Email == votacion.Email).Count == 0)
                 {

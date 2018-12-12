@@ -253,10 +253,11 @@ namespace SUA.Repositorios
             if (!IndexExists())
                 CreateIndex();
 
+/*
             var votaciones = GetVotacionesByIpAndShow(votacion.Ip, votacion.Show);
             if (votaciones != null && votaciones.Count >= 3)
                 throw new Exception(VOTACION_CANT_MAX_EXCEPTION);
-
+*/
 /*
             var votacionObtenida = GetVotacionesByEmailAndShow(votacion.Email, votacion.Show);
             if (votacionObtenida != null)
