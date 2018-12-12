@@ -89,7 +89,6 @@ namespace SUA.Repositorios
             var response = Client.IndexAsync(log, i => i
               .Index(Index)
               .Type(Index)
-              .Refresh(Refresh.True)
               ).Result;
 
             if (!response.IsValid)
@@ -272,7 +271,6 @@ namespace SUA.Repositorios
             var response = Client.Index<Votacion>(votacion, i => i
               .Index(Index)
               .Type(Index)
-              .Refresh(Refresh.True)
               );
 
             if (!response.IsValid)
