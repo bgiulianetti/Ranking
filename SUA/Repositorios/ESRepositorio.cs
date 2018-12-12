@@ -235,7 +235,7 @@ namespace SUA.Repositorios
                 return null;
 
             if (!response.IsValid)
-                throw new Exception(VOTACION_GET_BY_IP_AND_SHOW_SEARCH_EXCEPTION);
+                throw new Exception("get_votacion_by_ip_show - " + JsonConvert.SerializeObject(response));
 
             var votaciones = new List<Votacion>();
             if (response.Total > 0)
@@ -269,14 +269,14 @@ namespace SUA.Repositorios
                 throw new Exception(VOTACION_CANT_MAX_EXCEPTION);
 */
 
-            var response = Client.IndexAsync(votacion, i => i
+            var response = Client.Index<Votacion>(votacion, i => i
               .Index(Index)
               .Type(Index)
               .Refresh(Refresh.True)
-              ).Result;
+              );
 
             if (!response.IsValid)
-                throw new Exception(VOTACION_CREATE_NOT_CREATED_EXCEPTION);
+                throw new Exception("add_votacion_error - " + JsonConvert.SerializeObject(response));
         }
         public void AddBulkVotacion(List<Votacion> votaciones)
         {
