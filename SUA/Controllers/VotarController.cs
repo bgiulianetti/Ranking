@@ -51,15 +51,15 @@ namespace SUA.Controllers
             }
             else if (show == "danilachepi")
             {
-                ViewBag.image = "danilachepi.png";
+                ViewBag.image = "danilachepi.jpg";
                 ViewBag.show = "Dani La Chepi";
                 ViewBag.color = "#9f0f81";
             }
             else if (show == "darioorsi")
             {
                 ViewBag.image = "darioorsi.jpg";
-                ViewBag.show = "Dario Orsi - Me Quiero Quejar";
-                ViewBag.color = "#00bfff";
+                ViewBag.show = "Dario Orsi";
+                ViewBag.color = "#9f0f81";
             }
             else
             {
@@ -109,15 +109,15 @@ namespace SUA.Controllers
             }
             else if (fileNameShow == "danilachepi")
             {
-                ViewBag.image = "danilachepi.png";
+                ViewBag.image = "danilachepi.jpg";
                 ViewBag.show = "Dani La Chepi";
                 ViewBag.color = "#9f0f81";
             }
             else if (fileNameShow == "darioorsi")
             {
                 ViewBag.image = "darioorsi.jpg";
-                ViewBag.show = "Dario Orsi - Me Quiero Quejar";
-                ViewBag.color = "#00bfff";
+                ViewBag.show = "Dario Orsi";
+                ViewBag.color = "#9f0f81";
             }
             else
             {
@@ -214,9 +214,9 @@ namespace SUA.Controllers
             else if (show == "darioorsi")
             {
                 ViewBag.image = "darioorsi.jpg";
-                ViewBag.show = "Dario Orsi - Me Quiero Quejar";
+                ViewBag.show = "Dario Orsi";
                 showNombreCorrecto = "Dario Orsi - Me Quiero Quejar";
-                ViewBag.color = "#00bfff";
+                ViewBag.color = "#9f0f81";
             }
             else
             {

@@ -38,11 +38,16 @@
                 {
                     <h1 style="color:@ViewBag.color; font-weight:bold">#LOSOTROS <br />Magalí Tajes</h1>
                 }
+                else if (@ViewBag.show == "Dario Orsi")
+                {
+                    <h1 style="color:@ViewBag.color; font-weight:bold">Dario Orsi <br />Gira 2020</h1>
+                }
                 else
                 {
                     <h1 style="color:@ViewBag.color; font-weight:bold">@ViewBag.show</h1>
                 }
-                
+
+
                 <p>¡Votá tu ciudad!</p>
                 @if (ViewBag.mensaje != "")
                 {
