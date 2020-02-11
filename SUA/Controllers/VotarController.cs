@@ -49,6 +49,18 @@ namespace SUA.Controllers
                 ViewBag.show = "#LOSOTROS Magalí Tajes";
                 ViewBag.color = "#9f0f81";
             }
+            else if (show == "danilachepi")
+            {
+                ViewBag.image = "danilachepi.png";
+                ViewBag.show = "Dani La Chepi";
+                ViewBag.color = "#9f0f81";
+            }
+            else if (show == "darioorsi")
+            {
+                ViewBag.image = "darioorsi.jpg";
+                ViewBag.show = "Dario Orsi - Me Quiero Quejar";
+                ViewBag.color = "#00bfff";
+            }
             else
             {
                 ViewBag.mensaje = "Esta url no existe :(";
@@ -94,6 +106,18 @@ namespace SUA.Controllers
                 ViewBag.image = "magalitajes.png";
                 ViewBag.show = "#LOSOTROS Magalí Tajes";
                 ViewBag.color = "#9f0f81";
+            }
+            else if (fileNameShow == "danilachepi")
+            {
+                ViewBag.image = "danilachepi.png";
+                ViewBag.show = "Dani La Chepi";
+                ViewBag.color = "#9f0f81";
+            }
+            else if (fileNameShow == "darioorsi")
+            {
+                ViewBag.image = "darioorsi.jpg";
+                ViewBag.show = "Dario Orsi - Me Quiero Quejar";
+                ViewBag.color = "#00bfff";
             }
             else
             {
@@ -179,6 +203,20 @@ namespace SUA.Controllers
                 ViewBag.show = "#LOSOTROS Magalí Tajes";
                 showNombreCorrecto = "#LOSOTROS Magalí Tajes";
                 ViewBag.color = "#9f0f81";
+            }
+            else if (show == "danilachepi")
+            {
+                ViewBag.image = "danilachepi.png";
+                ViewBag.show = "Dani La Chepi";
+                showNombreCorrecto = "Dani La Chepi";
+                ViewBag.color = "#9f0f81";
+            }
+            else if (show == "darioorsi")
+            {
+                ViewBag.image = "darioorsi.jpg";
+                ViewBag.show = "Dario Orsi - Me Quiero Quejar";
+                showNombreCorrecto = "Dario Orsi - Me Quiero Quejar";
+                ViewBag.color = "#00bfff";
             }
             else
             {
