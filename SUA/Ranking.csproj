@@ -218,89 +218,6 @@
     <Compile Include="Utilities\Utilities.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="assets\calendar\fullcalendar.css" />
-    <Content Include="assets\calendar\fullcalendar.js" />
-    <Content Include="assets\calendar\fullcalendar.min.css" />
-    <Content Include="assets\calendar\fullcalendar.min.js" />
-    <Content Include="assets\calendar\fullcalendar.print.css" />
-    <Content Include="assets\calendar\fullcalendar.print.min.css" />
-    <Content Include="assets\calendar\gcal.js" />
-    <Content Include="assets\calendar\gcal.min.js" />
-    <Content Include="assets\calendar\lib\jquery-ui.min.js" />
-    <Content Include="assets\calendar\lib\jquery.min.js" />
-    <Content Include="assets\calendar\lib\moment.min.js" />
-    <Content Include="assets\calendar\locale-all.js" />
-    <Content Include="assets\calendar\locale\af.js" />
-    <Content Include="assets\calendar\locale\ar-dz.js" />
-    <Content Include="assets\calendar\locale\ar-kw.js" />
-    <Content Include="assets\calendar\locale\ar-ly.js" />
-    <Content Include="assets\calendar\locale\ar-ma.js" />
-    <Content Include="assets\calendar\locale\ar-sa.js" />
-    <Content Include="assets\calendar\locale\ar-tn.js" />
-    <Content Include="assets\calendar\locale\ar.js" />
-    <Content Include="assets\calendar\locale\bg.js" />
-    <Content Include="assets\calendar\locale\bs.js" />
-    <Content Include="assets\calendar\locale\ca.js" />
-    <Content Include="assets\calendar\locale\cs.js" />
-    <Content Include="assets\calendar\locale\da.js" />
-    <Content Include="assets\calendar\locale\de-at.js" />
-    <Content Include="assets\calendar\locale\de-ch.js" />
-    <Content Include="assets\calendar\locale\de.js" />
-    <Content Include="assets\calendar\locale\el.js" />
-    <Content Include="assets\calendar\locale\en-au.js" />
-    <Content Include="assets\calendar\locale\en-ca.js" />
-    <Content Include="assets\calendar\locale\en-gb.js" />
-    <Content Include="assets\calendar\locale\en-ie.js" />
-    <Content Include="assets\calendar\locale\en-nz.js" />
-    <Content Include="assets\calendar\locale\es-do.js" />
-    <Content Include="assets\calendar\locale\es-us.js" />
-    <Content Include="assets\calendar\locale\es.js" />
-    <Content Include="assets\calendar\locale\et.js" />
-    <Content Include="assets\calendar\locale\eu.js" />
-    <Content Include="assets\calendar\locale\fa.js" />
-    <Content Include="assets\calendar\locale\fi.js" />
-    <Content Include="assets\calendar\locale\fr-ca.js" />
-    <Content Include="assets\calendar\locale\fr-ch.js" />
-    <Content Include="assets\calendar\locale\fr.js" />
-    <Content Include="assets\calendar\locale\gl.js" />
-    <Content Include="assets\calendar\locale\he.js" />
-    <Content Include="assets\calendar\locale\hi.js" />
-    <Content Include="assets\calendar\locale\hr.js" />
-    <Content Include="assets\calendar\locale\hu.js" />
-    <Content Include="assets\calendar\locale\id.js" />
-    <Content Include="assets\calendar\locale\is.js" />
-    <Content Include="assets\calendar\locale\it.js" />
-    <Content Include="assets\calendar\locale\ja.js" />
-    <Content Include="assets\calendar\locale\ka.js" />
-    <Content Include="assets\calendar\locale\kk.js" />
-    <Content Include="assets\calendar\locale\ko.js" />
-    <Content Include="assets\calendar\locale\lb.js" />
-    <Content Include="assets\calendar\locale\lt.js" />
-    <Content Include="assets\calendar\locale\lv.js" />
-    <Content Include="assets\calendar\locale\mk.js" />
-    <Content Include="assets\calendar\locale\ms-my.js" />
-    <Content Include="assets\calendar\locale\ms.js" />
-    <Content Include="assets\calendar\locale\nb.js" />
-    <Content Include="assets\calendar\locale\nl-be.js" />
-    <Content Include="assets\calendar\locale\nl.js" />
-    <Content Include="assets\calendar\locale\nn.js" />
-    <Content Include="assets\calendar\locale\pl.js" />
-    <Content Include="assets\calendar\locale\pt-br.js" />
-    <Content Include="assets\calendar\locale\pt.js" />
-    <Content Include="assets\calendar\locale\ro.js" />
-    <Content Include="assets\calendar\locale\ru.js" />
-    <Content Include="assets\calendar\locale\sk.js" />
-    <Content Include="assets\calendar\locale\sl.js" />
-    <Content Include="assets\calendar\locale\sq.js" />
-    <Content Include="assets\calendar\locale\sr-cyrl.js" />
-    <Content Include="assets\calendar\locale\sr.js" />
-    <Content Include="assets\calendar\locale\sv.js" />
-    <Content Include="assets\calendar\locale\th.js" />
-    <Content Include="assets\calendar\locale\tr.js" />
-    <Content Include="assets\calendar\locale\uk.js" />
-    <Content Include="assets\calendar\locale\vi.js" />
-    <Content Include="assets\calendar\locale\zh-cn.js" />
-    <Content Include="assets\calendar\locale\zh-tw.js" />
     <Content Include="assets\css\bootstrap-colorpicker.css">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -406,6 +323,12 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="assets\votacion\images\bg.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\votacion\images\danilachepi.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\votacion\images\darioorsi.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="assets\votacion\images\elinnombrable.png">
