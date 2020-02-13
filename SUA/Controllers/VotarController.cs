@@ -206,7 +206,7 @@ namespace SUA.Controllers
             }
             else if (show == "danilachepi")
             {
-                ViewBag.image = "danilachepi.png";
+                ViewBag.image = "danilachepi.jpg";
                 ViewBag.show = "Dani La Chepi";
                 showNombreCorrecto = "Dani La Chepi";
                 ViewBag.color = "#9f0f81";
@@ -215,7 +215,7 @@ namespace SUA.Controllers
             {
                 ViewBag.image = "darioorsi.jpg";
                 ViewBag.show = "Dario Orsi";
-                showNombreCorrecto = "Dario Orsi - Me Quiero Quejar";
+                showNombreCorrecto = "Dario Orsi";
                 ViewBag.color = "#9f0f81";
             }
             else
